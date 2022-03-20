@@ -1,5 +1,4 @@
-﻿using Financefinall.Services;
-using Financefinall.Views;
+﻿using Financefinall.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,8 +11,6 @@ namespace Financefinall
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

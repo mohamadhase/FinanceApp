@@ -30,8 +30,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <!--<ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />-->
+        <!--<ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />-->
     </TabBar>
 
     <!--
@@ -39,7 +39,18 @@
         await Shell.Current.GoToAsync("//LoginPage");
     -->
     <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <Tab Title="Dashboard" >
+            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        </Tab>
+        <Tab Title="Reports" >
+            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        </Tab>
+        <Tab Title="Categories" >
+            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        </Tab>
+        <Tab Title="Limits" Icon="icon_about.png">
+            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        </Tab>
     </TabBar>
 
 

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "p43oFGxdGgNCICPCWcybuH9Iz1K7OluusOR7QkORWVfuvw1S81NzCmFZATXTMJlo5MEPKK9FjNmpGjIHg5qnfg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\moham\\source\\repos\\Financefinall\\Financefinall\\Financefinall.iOS\\Financefinall.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\moham\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

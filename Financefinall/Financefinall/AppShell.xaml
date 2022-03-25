@@ -39,17 +39,17 @@
         await Shell.Current.GoToAsync("//LoginPage");
     -->
     <TabBar>
-        <Tab Title="Dashboard" >
+        <Tab Title="Dashboard" Icon="icon_about.png">
             <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
         </Tab>
-        <Tab Title="Reports" >
-            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        <Tab Title="Reports" Icon="icon_about.png">
+            <ShellContent Route="Reports" ContentTemplate="{DataTemplate local:Reports}" />
         </Tab>
-        <Tab Title="Categories" >
-            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+        <Tab Title="Categories" Icon="icon_about.png">
+            <ShellContent Route="Categories" ContentTemplate="{DataTemplate local:Categories}" />
         </Tab>
         <Tab Title="Limits" Icon="icon_about.png">
-            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+            <ShellContent Route="Limits" ContentTemplate="{DataTemplate local:Limits}" />
         </Tab>
     </TabBar>
 

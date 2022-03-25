@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -91,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Financefinall\Financefinall.csproj">
-      <Project>{8B4705C5-A7FF-4EAF-9D6E-4A60762F41E6}</Project>
+      <Project>{EF3DF5FA-6C4B-4BB9-880E-F9EAB910AE1D}</Project>
       <Name>Financefinall</Name>
     </ProjectReference>
   </ItemGroup>

@@ -21,7 +21,7 @@
                     <Grid>
                         <StackLayout>
                             <Label  Text="{Binding currency}"></Label>
-                            <Label  Text="{Binding email}"></Label>
+                         
                         </StackLayout>
                     </Grid>
                 </DataTemplate>

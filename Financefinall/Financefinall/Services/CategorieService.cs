@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
 using Firebase.Database;
 using Financefinall.Models;
 using System.Threading.Tasks;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Xamarin.Essentials;
+using System.Collections.ObjectModel;
+using Firebase.Database.Query;
 
 namespace Financefinall.Services
 
@@ -15,19 +16,36 @@ namespace Financefinall.Services
     class CategorieService
     {
         FirebaseClient firebaseClient = new FirebaseClient("https://financiio-default-rtdb.europe-west1.firebasedatabase.app/");
-         public async Task<List<User>> GetAllUsers()
+         public  ObservableCollection<Category> getUserCategories(string UserID)
          {
-            return (await firebaseClient
-             .Child("Users")
-             .OnceAsync<User>())
-             .Select(item => new User
-             {
-                 Categories = item.Object.Categories.ToList(),
-                 currency = item.Object.currency,
-                 email = item.Object.email,
-                 pass = item.Object.pass,
-             }).ToList();
+            return  firebaseClient
+             .Child($"Users/{UserID}/categories")
+             .AsObservable<Category>()
+             .AsObservableCollection();
          }
+        public async Task EditCategory(string UserID, string categoryID, Category cat)
+        {
+             await firebaseClient
+           .Child($"Users/{UserID}/categories/{categoryID}")
+           .PatchAsync(new Category(cat));
+        }
+
+        public async Task DeleteCategory(string UserID, string categoryID)
+        {
+            await firebaseClient
+           .Child($"Users/{UserID}/categories/{categoryID}")
+           .DeleteAsync();
+        }
+        public async Task AddCategory(string UserID, Category category)
+        {
+
+                 await firebaseClient
+                .Child($"Users/{UserID}/categories")
+                .PostAsync(new Category(category));
+        }
+
+
+
     }
 
 

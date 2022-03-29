@@ -1,12 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Financefinall.Views.Categories">
+             x:Class="Financefinall.Views.Categories"
+                       xmlns:viewmodels="clr-namespace:Financefinall.ViewModels">
+    <ContentPage.BindingContext>
+        <viewmodels:CategoriesViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Categories"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Income Or Out Come" HorizontalOptions="Center"/>
+            <Label x:Name="AddCategory"  Text="Add" HorizontalOptions="End" TextColor="#007AFF" Margin="0,0,20,0"/>
+            
+            <RefreshView>
+                <!--<Label Text="{Binding Categories[0].categorie_id}"/>-->
+                <CollectionView
+                 ItemsSource = "{Binding categories}"
+                SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+                     SelectionMode="Single">
+                    <CollectionView.EmptyView>
+                        <Frame >
+                            <Label Text="No Data Yet"/>
+                        </Frame>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" 
+                                        ></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate>
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal"  >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Frame Margin="5"
+                                   HeightRequest="20"
+                                   WidthRequest="20"
+                                   IsClippedToBounds="True"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   BackgroundColor="Transparent">
+                                            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Dollar_sign_in_circle_cleaned_%28PD_version%29.svg/1200px-Dollar_sign_in_circle_cleaned_%28PD_version%29.svg.png"
+                                     Aspect="AspectFill"
+                                     Margin="-10"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="20"
+                                     WidthRequest="20" />
+                                        </Frame>
+                                        <Label VerticalOptions="Center" FontSize="20"    BackgroundColor="Transparent"   Text="{Binding categorie_name}"/>
+                                    </StackLayout>
+                                    <Label Text=">" TextColor="#007AFF" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,20,0"/>
+
+
+
+                                </StackLayout>
+                                <BoxView HeightRequest="1"
+                   BackgroundColor="Gray"
+
+                   VerticalOptions="Fill"/>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

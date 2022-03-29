@@ -8,24 +8,6 @@
         <viewmodels:DashboardViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <CollectionView
-                 ItemsSource = "{Binding users}">
-
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical"
-                                         Span="2"></GridItemsLayout>
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-
-                    <Grid>
-                        <StackLayout>
-                            <Label  Text="{Binding currency}"></Label>
-                            <Label  Text="{Binding email}"></Label>
-                        </StackLayout>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Label Text="Dashboard"></Label>
     </ContentPage.Content>
 </ContentPage>

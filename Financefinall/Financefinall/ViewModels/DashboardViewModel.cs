@@ -6,24 +6,31 @@ using Financefinall.Models;
 using Financefinall.Services;
 
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
+
 namespace Financefinall.ViewModels
 {
     class DashboardViewModel : BindableObject
     {
-        public List<User> users { get; set; }
+        CategorieService categorieservice;
+        public ObservableCollection<User> _users = new ObservableCollection<User>();
+        public ObservableCollection<User> users
+        {
+            get { return _users; }
+            set { _users = value; }
+        } 
 
         public DashboardViewModel()
         {
-            users = new List<User>();
-            Button_Clicked();
-        }
-        async private void Button_Clicked()
-        {
-            CategorieService categorieservice = new CategorieService();
-            users = (await categorieservice.GetAllUsers());
+             categorieservice = new CategorieService();
 
-            users.ForEach(x => Console.WriteLine(x.email));
-
+            //Button_Clicked();
         }
+        //async private void Button_Clicked()
+        //{
+        //    //users =  categorieservice.GetAllUsers();
+
+
+        //}
     }
 }

@@ -8,6 +8,6 @@
         <viewmodels:DashboardViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Label Text="Dashboard"></Label>
+        <Label Text="Dashboard1"></Label>
     </ContentPage.Content>
 </ContentPage>

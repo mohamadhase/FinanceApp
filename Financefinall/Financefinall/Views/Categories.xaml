@@ -8,13 +8,28 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Income Or Out Come" HorizontalOptions="Center"/>
-            <Label x:Name="AddCategory"  Text="Add" HorizontalOptions="End" TextColor="#007AFF" Margin="0,0,20,0"/>
+            <Frame
+                Margin="0,10,0,10"
+                CornerRadius="30" 
+                    BackgroundColor="#EFEFF0"
+           HorizontalOptions="Center" 
+           VerticalOptions="Start"
+           HasShadow="True"
+           IsClippedToBounds="True"
+           Padding="0">
+            <StackLayout Padding="3" BackgroundColor="#EFEFF0" Orientation="Horizontal" HorizontalOptions="Center" Spacing="5" >
+                    <Button Command="{Binding IncomeCommand}"  BorderRadius="20" Text="Income" HorizontalOptions="End" TextColor="Black" BackgroundColor="{Binding IncomeColor}"  />
+                    <Button Command="{Binding OutcomeCommand}" BorderRadius="20" Text="Outcome" HorizontalOptions="End" TextColor="Black" BackgroundColor="{Binding OutComeColor}" />
+
+            </StackLayout>
+            </Frame>
+                    <Label Text="Income Or Out Come" HorizontalOptions="Center"/>
+            <Button Command="{Binding AddButtonCommand}"  Text="Add" HorizontalOptions="End" TextColor="#007AFF" BackgroundColor="White"  Margin="0,0,20,0"/>
             
             <RefreshView>
                 <!--<Label Text="{Binding Categories[0].categorie_id}"/>-->
                 <CollectionView
-                 ItemsSource = "{Binding categories}"
+                 ItemsSource = "{Binding categories2}"
                 SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
                      SelectionMode="Single">
                     <CollectionView.EmptyView>
@@ -49,8 +64,6 @@
                                         <Label VerticalOptions="Center" FontSize="20"    BackgroundColor="Transparent"   Text="{Binding categorie_name}"/>
                                     </StackLayout>
                                     <Label Text=">" TextColor="#007AFF" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,20,0"/>
-
-
 
                                 </StackLayout>
                                 <BoxView HeightRequest="1"

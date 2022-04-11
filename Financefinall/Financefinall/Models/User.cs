@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Financefinall.Models
@@ -9,7 +10,8 @@ namespace Financefinall.Models
         public string email { get; set; }
         public string pass { get; set; }
         public string currency { get; set; }
-        public List<Category> Categories { get; set; }
+        public ObservableCollection<Category> Categories;
+
     }
 
 

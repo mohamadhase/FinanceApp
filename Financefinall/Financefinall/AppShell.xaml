@@ -40,7 +40,7 @@
     -->
     <TabBar>
         <Tab Title="Dashboard" Icon="icon_about.png">
-            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:Dashboard}" />
+            <ShellContent Route="Dashboard" ContentTemplate="{DataTemplate local:AddTransaction}" />
         </Tab>
         <Tab Title="Reports" Icon="icon_about.png">
             <ShellContent Route="Reports" ContentTemplate="{DataTemplate local:Reports}" />

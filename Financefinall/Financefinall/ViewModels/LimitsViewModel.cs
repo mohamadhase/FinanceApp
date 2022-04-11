@@ -55,11 +55,15 @@ namespace Financefinall.ViewModels
             {
                 if (value != null)
                 {
-                    Application.Current.MainPage.Navigation.PushAsync(new EditCategory(value));
+                    
+                    Application.Current.MainPage.Navigation.PushAsync(new AddLimit(value));
 
                 }
+                else
+                {
+                    Console.WriteLine("value IS NULL");
+                }
 
-                selectedCategory = value;
                 OnPropertyChanged();
 
 
@@ -81,6 +85,13 @@ namespace Financefinall.ViewModels
                     limitShow.Clear();
                     foreach (Category cat in categories)
                     {
+                        if (cat.limits == null)
+                        {
+                        Category newCatLimit = new Category(cat);
+                        noLimitCategories.Add(newCatLimit);
+                        continue;
+                        }
+                    
                         bool hasLimit = false;
                         int index = 0;
                         for(int i = 0; i < cat.limits.Count; i++)

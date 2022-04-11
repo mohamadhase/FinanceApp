@@ -30,7 +30,6 @@ namespace Financefinall.Views
             int rand_num = rd.Next(1, 4000);
             cat.categorie_id = rand_num.ToString();
             await categorieService.AddCategory("User1", cat);
-            await DisplayAlert("Adding", "The Category Adeed", "Ok");
             await Navigation.PushAsync(new Categories());
 
 

@@ -7,6 +7,7 @@ using System.Text;
 using Financefinall.Models;
 
 using Firebase.Database;
+using Firebase.Database.Query;
 
 namespace Financefinall.Services
 {
@@ -21,6 +22,14 @@ namespace Financefinall.Services
              .AsObservable<Category>()
              .AsObservableCollection();
             Console.WriteLine(UserCategories.Count());
+
+        }
+        public void AddCtegoryLimit(string UserID,string CategoryID,Limit limit)
+        {
+              firebaseClient
+             .Child($"Users/{UserID}/categories/{CategoryID}/limits")
+             .PostAsync(limit);
+             
 
         }
     }

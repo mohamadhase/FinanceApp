@@ -14,8 +14,7 @@
             <RefreshView  >
                 <CollectionView MinimumHeightRequest="200"
                  ItemsSource = "{Binding limitShow}"
-                SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
-                     SelectionMode="Single">
+               >
                     <CollectionView.EmptyView>
                         <Frame>
                             <Label   Text="No Data Yet"/>

@@ -10,6 +10,9 @@ using Financefinall.Models;
 using Financefinall.Services;
 using Financefinall.Views;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -92,6 +95,8 @@ namespace Financefinall.ViewModels
 
         void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+
+        
 
             if (e.Action == NotifyCollectionChangedAction.Add)
             {

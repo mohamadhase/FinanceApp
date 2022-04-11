@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+
+using Xamarin.Forms;
 
 namespace Financefinall.Models
 {
@@ -24,8 +27,9 @@ namespace Financefinall.Models
         public string categorie_name { get; set; }
         public string photo_id { get; set; }
         public int type { get; set; }
-        public List<Transaction> transactions { get; set; }
-        public List<Limit> limits { get; set; }
 
+        public ObservableCollection<Transaction> transactions;
+
+        public ObservableCollection<Limit> limits;
     }
 }

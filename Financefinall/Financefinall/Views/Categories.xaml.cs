@@ -15,18 +15,7 @@ namespace Financefinall.Views
         public Categories()
         {
             InitializeComponent();
-            AddCategoryClick();
         }
-         void AddCategoryClick()
-        {
-            AddCategory.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(async () =>
-                {
-                    await Navigation.PushAsync(new AddCategory());
 
-                })
-            });
-        }
     }
 }

@@ -7,5 +7,6 @@ namespace Financefinall.ViewModels
 {
     class AddCategoryViewModel:BindableObject
     {
+        
     }
 }
